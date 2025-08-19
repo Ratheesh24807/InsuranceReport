@@ -2,22 +2,24 @@ package org.amadeus.exception;
 
 import lombok.Getter;
 
-import java.time.LocalDate;
-
 @Getter
 public class InsuranceReportException extends RuntimeException{
 
-    private final String errorCodeRef;
-    private final String errorMsgRef;
+    private final String errorCode;
+    private final String errorMsg;
+    private final String outpayceError;
 
-    public InsuranceReportException(String errorCodeDon, String errorMsgDon){
+    public InsuranceReportException(String errorCodeDon, String errorMsgDon, String outpayceError){
         super(errorMsgDon);
-        this.errorCodeRef=errorCodeDon;
-        this.errorMsgRef=errorMsgDon;
-
-
+        this.errorCode =errorCodeDon;
+        this.errorMsg =errorMsgDon;
+        this.outpayceError = outpayceError;
     }
 
-
+    public InsuranceReportException(String err, String errmsg){
+        this.outpayceError=null;
+        this.errorCode=err;
+        this.errorMsg=errmsg;
+    }
 
 }
