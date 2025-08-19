@@ -1,7 +1,5 @@
 package org.amadeus.exception;
 
-import jakarta.ws.rs.core.Response;
-
 public enum ErrorListInternal {
 
     INVALID_USER_ID( "The customer is not present by this id"),
